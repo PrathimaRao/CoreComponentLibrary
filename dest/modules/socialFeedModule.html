@@ -1,0 +1,178 @@
+<TabNavigator id="tn1" selectedIndex="{art.model.socialFeed.defaultTab}">
+	<div id="following" label="&lt;span id='followingIcon'&gt;&lt;/span&gt;&lt;span id='followingLabel'&gt;Following&lt;/span&gt;" class="followingFeedContent" click="Controller.notify('socialFeed_followingTabClicked')">
+		<Container id="following_login" class="YourFeedLoginScreenContainer YourFeedLoginScreenContainerFollowing">
+			<div class="screenContentFollowing screenContent1">{DemoCore.getString('Please log in or sign up to follow people')}</div>
+			<div class="clear"></div>
+			<div class="connectFBBtnContainer">
+				<div class="connectFBBtnLogin" id="connectFBBtnLoginFollowing"></div>
+			</div>
+			<div class="clear"></div>
+			<div class="screenContent2">{DemoCore.getString('Art.com will never post to Facebook without your permission.')}</div>
+			<div class="clear"></div>
+			<div class="screenContent3">{DemoCore.getString('Using Facebook is faster and helps us connect you with friends.')}</div>
+			<div class="clear"></div>
+			<div class="registerEmailContainer">
+				<!--<Button size="small" flavor="primary" id="registerWithEmailBtn" class="registerEmailLabel" label="DemoCore.getString('Sign Up Using Email')" click="Controller.notify('handle_Register_LogIn_Key')"></Button>-->
+				<input type="button" id="registerWithEmailBtn" class="core_Button primary medium core_Component" data-enabled="true" value="{DemoCore.getString('sign up using email')}" onclick="Controller.notify('handle_Register_LogIn_Key')" />
+			</div>
+			<div class="clear"></div>
+			<div class="alreadyLoginContainer screenContent4">
+				<span class="alreadyLoginLabel">{DemoCore.getString('Already have an account?')}</span>
+				<span id="lblLogIn" class="alreadyLoginLink" onclick="Controller.notify('handle_Already_LogIn_Key')">{DemoCore.getString('Log In')}</span>
+			</div>
+		</Container> 
+	</div>
+	<div id="friends" label="&lt;span id='friendsIcon'&gt;&lt;/span&gt;&lt;span id='friendsLabel'&gt;Friends&lt;/span&gt;" class="friendsFeedContent" click="Controller.notify('socialFeed_friendsTabClicked')">
+		<div class="YourFeedLoginScreenContainer YourFeedLoginScreenContainerFriends">
+
+			<div class="screenContentFriends screenContent1"></div>
+			<div class="clear"></div>
+			<div class="connectFBBtnContainer">
+				<div class="connectFBBtnLogin" id="connectFBBtnLoginFriends"></div>
+			</div>
+			<div class="clear"></div>
+			<div class="screenContent2">{DemoCore.getString('Art.com will never post to Facebook without your permission.')}</div>
+			<div class="clear"></div>
+			<div class="screenContent3">{DemoCore.getString('Using Facebook is faster and helps us connect you with friends.')}</div>
+		</div> 
+	</div>
+	<div id="featured" label="&lt;span id='featuredIcon'&gt;&lt;/span&gt;&lt;span id='featuredLabel'&gt;Featured&lt;/span&gt;" class="featuredFeedContent" click="Controller.notify('socialFeed_featuredTabClicked')">
+	    <Container id="test1" class="YourFeedLoginScreenContainer">
+         <div >Featured people list goes here........ </div> 
+         </Container>  
+    </div>
+	<div id="everyone" label="&lt;span id='everyoneIcon'&gt;&lt;/span&gt;&lt;span id='everyoneLabel'&gt;Everyone&lt;/span&gt;" class="happeningoNArtComFeedContent" click="Controller.notify('socialFeed_everyoneTabClicked')">
+	    <Container id="test2" class="YourFeedLoginScreenContainer">
+         <div>Feed page will be populated here... </div>        
+         </Container>
+    </div>
+</TabNavigator>
+
+
+
+<div class="feedContent">
+<div id="FeedContentCount"></div>
+	<Container id="feedMessage" style="display: {art.model.socialFeed.feedMessage?'block':'none'};">{art.model.socialFeed.feedMessage}</Container>
+	<div id="feedContainer" class="rightContainer floatLeft">
+	  <MultiDataRepeater id="feedDR" data="{art.model.socialFeed.feedData}" class="noUser followUsedShow" ignoreAutoUpdates="true">
+			<noData>
+				<div id="feedDR_loadingIndicator" rnd="{Math.random()}">
+					{DemoCore.getString('feed is refreshing, please wait')}...
+					<div class="loadingIndicator"></div>
+				</div>
+			</noData>
+			<loadingContent>
+				<div id="feedDR_loadingIndicator">
+					{DemoCore.getString('feed is refreshing, please wait')}...
+					<div class="loadingIndicator"></div>
+				</div>
+			</loadingContent>
+             
+			<itemRenderer useIf="item.type==DemoCore.constants.ADDIEMTOGALLERY">
+				<!--
+				<div>date: {item.dateCreated}</div>-->
+				<!-- <div>id: {item.feedItemId}</div>
+				<div>timestamp: {item.timeStamp} ({item.timeStampDate})</div> -->
+				<div class="feedIR {item.type}" url="$baseUrl$" id="feedItemId_{item.feedItemId}">
+					<div class="feedIR_user">
+						<!--<img onclick="art.commands.socialFeed.userImageClick('{item.feedItemId}')" class="feedIR_userThumb" src="{item.owner.images.thumbnail}" />-->
+						<!--<span onclick="art.commands.socialFeed.userImageClick('{item.feedItemId}')" class="feedIR_userThumb" style="background-image: url('{item.owner.images.thumbnail}');"></span>-->
+						<span onclick="art.commands.socialFeed.userImageClick('{item.feedItemId}')" class="feedIR_userThumb">
+							<img class="feedIR_userThumbImg" src="{item.owner.account.images.thumbnail}" />
+							<span class="featuredUserStar" style="display:{art.utils.socialFeed.showFeaturedLabelStar(this.item.owner.account.Featured)}"></span>
+						</span>
+						<Button id="feedIR_userFollowButton_{this.item.guid}" class="feedIR_userFollowButton" style="display:{art.utils.socialFeed.followBtnDisplay(this.item.owner.account.accountId)}" label="{DemoCore.getString('Follow')}" flavor="secondary" size="small" click="art.commands.socialFeed.follow(this.item.owner)"></Button>
+						<Button id="feedIR_userFollowingButton_{this.item.guid}" class="feedIR_userFollowButton hidden" style="display:{art.utils.socialFeed.followingBtnDisplay(this.item.owner.account.accountId)}" label="{DemoCore.getString('following2').replace('2','')}" flavor="primary" size="small"></Button>
+						
+					</div>
+					<div class="feedIR_galleryItem feedIR_content">
+						<div class="feedIR_galleryItem_tagLine">
+							<span class="featuredUser" style="display:{art.utils.socialFeed.showFeaturedLabel(this.item.owner.account.Featured)}">{DemoCore.getString('Featured')}:</span><a href="{item.owner.account.social.profileUrl}">{item.owner.account.name.displayName()}</a> {DemoCore.getString('added to')} <a href="{item.gallery.url}">{item.gallery.name}</a>
+						</div>
+						<div class="clear"></div>
+						<div class="feedIR_galleryItem_heroImageContainer">
+							<img src="{item.heroImgObj.url}" class="feedIR_galleryItem_heroImage shadow" onclick="art.commands.socialFeed.ImageClickGA();art.commands.socialFeed.redirectProductPage('{item.feedItemId}')" data-feedItemId="{item.feedItemId}"></img>
+						</div>
+						<div class="clear"></div>
+						<div class="feed_linkscontainer">
+							<div class="feedlinks_left">
+								<div class="feedIR_galleryItem_title floatLeft" onclick="art.commands.socialFeed.redirectProductPage('{item.feedItemId}')">{item.product.title}</div>
+							</div>	
+							<div class="feedlinks_right">
+								<div class="feedIR_ShareButtonContainer">
+									<Button size="small" flavor="secondary" class="feedIR_ShareButton" label="{DemoCore.getString('Share')}" id="btnShare_{item.feedItemId}" click="art.commands.socialFeed.shareBtnClick(this.item.feedItemId)" ></Button>
+								</div>
+								<div title="{DemoCore.getString('Save to Gallery to collect art you love')}" class="save_to_gal_icon saveToGallery_feed saveToGallery_feed_{item.feedItemId}" id="saveToGallery_feed saveToGallery_feed_{item.feedItemId}" onclick="art.commands.socialFeed.saveFeedItemToGallery('{item.feedItemId}')">{DemoCore.getString('Save to Gallery')}</div>
+							</div>
+						</div>		
+					</div>
+					<div class="clear"></div>
+					<div class="debug">feedid:{item.feedItemId}:::::timestamp:{item.timeStamp}:::DateCreated:{item.dateCreated}</div>
+				</div>
+			</itemRenderer>			
+		</MultiDataRepeater>		
+	</div>
+</div>
+
+<script>
+ // gigya app: src/com/art/social/commands/socialFeedCommands.js
+
+$(window).scroll(art.commands.socialFeed.handleScroll);
+</script>
+
+<div id="gridTemplate" class="grid">
+	<div class="gridColumn"></div>
+	<div class="gridColumn"></div>
+	<div class="gridColumn"></div>
+	<div class="gridColumn"></div>
+	<div class="gridColumn"></div>
+	<div class="gridColumn"></div>
+	<div class="gridColumn"></div>
+	<div class="gridColumn"></div>
+	<div class="gridColumn"></div>
+	<div class="gridColumn"></div>
+	<div class="gridColumn"></div>
+	<div class="gridColumn"></div>
+</div>
+
+<style>
+#gridTemplate {
+	display: none;
+}
+.grid {
+	position: fixed;
+	width: 1092px;
+	height: 2000px;
+	white-space: nowrap;
+}
+.gridColumn {
+	display: inline-block;
+	width: 73px;
+	height: 100%;
+	margin-right: 9px;
+	background: rgba(0,255,255,0.25);
+}
+</style>
+
+<script>
+window['showGrid'] = function() {
+	var grid = document.getElementById('grid');
+	if (!grid) {
+		var node = document.getElementById('gridTemplate').cloneNode(true);
+		node.id = 'grid';
+		var target = document.getElementsByClassName('SocialContainer')[0];
+		if (!target) {
+			error('showGrid > cannot show grid.');
+			return;
+		}
+		target.appendChild(node);
+		node.style.display = 'block';
+
+		$('.SocialContainer').css('position','relative');
+	}
+}
+</script>
+
+<script>
+    //art.commands.socialFeed.start(); // gigya app: src/com/art/social/commands/socialFeedCommands.js
+</script>

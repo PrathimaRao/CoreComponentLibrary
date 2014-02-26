@@ -1,0 +1,1643 @@
+.feedIR_content {
+	padding-bottom: 28px;
+	border-bottom:1px solid #c0c0c0;
+	width: 583px;
+}
+
+.profileIR .userIR_previewImage {
+	/*margin: 5px;*/
+	margin-right: 12px;
+	background-size: contain;
+	/*border: 1px solid #888;*/
+}
+.profileIR {
+	margin-left: 18px;
+	margin-bottom: 18px;
+	padding-bottom: 18px;
+	position: relative;
+	width: 576px; /* total guess! can't find this in the style guide */
+}
+.feedIR_follow .profileIR {
+	margin: 0;
+	margin-top: 13px;
+	padding-bottom: 0;
+}
+.profileIR_left {
+	margin-right: 10px;
+}
+.profileIR_previews {
+	position:absolute;
+	top:0px;
+	left:220px;
+}
+.profileIR_previewImage {
+	width: 73px;
+	height: 73px;	
+	margin-right: 12px;
+	position: relative;	
+}
+.profileIR_previewImage img {
+	position: absolute; 
+	bottom: 0; 
+	max-width: 73px; 
+	max-height: 73px; 
+	box-shadow: 0 0 3px 0px #888;
+}
+
+#scrollToTop, #scrollToTop2 {
+	position: fixed;
+	background: black;
+	color: white;
+	padding: 2px 0;
+	font-family: BebasNeueRegular;
+	font-size: 20px;
+	text-align: center;
+	cursor: pointer;
+
+	/*-webkit-transform: scale(0);
+	transform: scale(0);*/
+	opacity: 0;
+}
+#scrollToTop {
+	top: 10px;
+	left: 50%;
+	margin-left: -110px;
+	/*right: 18px;
+	bottom: 90px;*/
+	width: 220px; /* guess */
+	z-index: 961;
+	top: -10px;
+	top/*\**/: -28px\9;
+}
+#scrollToTop[count="0"] {
+	display: none !important;
+}
+#scrollToTop2 {
+	right: 18px; 
+	bottom: 48px;
+	padding: 5px 10px;
+	z-index: 962;
+	bottom: 0px;
+}
+#scrollToTop.show {
+	top: 10px;
+	opacity: 1;
+	animation: fadeIn 0.3s ease-out 0s 1;
+	-webkit-animation: fadeIn 0.3s ease-in-out 0 1;
+}
+#scrollToTop.hide {
+	animation: fadeOut 0.3s ease-out 0s 1;
+	-webkit-animation: fadeOut 0.3s ease-in-out 0s 1;
+}
+#scrollToTop2.show {
+	opacity: 1;
+	bottom: 48px;
+	animation: fadeIn2 0.3s ease-out 0s 1;
+	-webkit-animation: fadeIn2 0.3s ease-in-out 0 1;
+}
+#scrollToTop2.hide {
+	animation: fadeOut2 0.3s ease-out 0s 1;
+	-webkit-animation: fadeOut2 0.3s ease-in-out 0s 1;
+}
+@keyframes fadeIn {
+	from { transform: scale(0.1); opacity: 0; }
+	to { transform: scale(1); opacity: 1; }	
+}
+@keyframes fadeOut {
+	0% { transform: scale(1); opacity: 1; }
+	100% { transform: scale(0); opacity: 0; }
+}
+@-webkit-keyframes fadeIn {
+	0% { 		 
+		opacity: 0;
+		top: -10px;
+	}
+	100% { 
+		opacity: 1; 
+		top: 10px;
+	}
+}
+@-webkit-keyframes fadeOut {
+	/*0% { -webkit-transform: scale(1); opacity: 1; }
+	100% { -webkit-transform: scale(0); opacity: 0; }*/
+	0% {
+		opacity: 1;
+		top: 10px;
+	}
+	100% {
+		opacity: 0;
+		top: -10px;
+	}
+}
+@-webkit-keyframes fadeIn2 {
+	0% { 		 
+		opacity: 0;
+		bottom: 0;
+	}
+	100% { 
+		opacity: 1; 
+		bottom: 48px;
+	}
+}
+@-webkit-keyframes fadeOut2 {
+	/*0% { -webkit-transform: scale(1); opacity: 1; }
+	100% { -webkit-transform: scale(0); opacity: 0; }*/
+	0% {
+		opacity: 1;
+		bottom: 48px;
+	}
+	100% {
+		opacity: 0;
+		bottom: 0;
+	}
+}
+#scrollToTop_img {
+	vertical-align: middle;
+	margin-right: 3px;
+}
+
+#infiniteScrollAnchor {
+	display: none;
+	margin: 18px;
+	padding: 18px;
+	color: #ccc;
+	text-align: center;
+	clear: both;
+	font-family: BebasNeueRegular;
+	font-size: 24px;
+	background: url('http://cache1.artprintimages.com/images/community/spinning-wheel.gif') center left no-repeat;
+	padding-left: 41px;
+	margin-left: 220px;
+	text-align: left;
+}
+#infiniteScrollAnchor.show {
+	display: block;
+}
+#infiniteScrollAnchor.hide {
+	display: none !important;
+}
+.feedReady #infiniteScrollAnchor {
+	display: block;	
+}
+#feedDR_loadingIndicator {
+	width: 600px;
+	text-align: center;
+	font-size: 24px;
+	font-family: BebasNeueRegular;
+	color: #ccc; 
+}
+.feedIR_galleryOwnerThumb {
+	margin-right: 12px;
+}
+
+.feedIR_userThumb {
+	overflow: hidden;
+	text-align: center;
+}
+.feedIR_userThumbImg {
+	width: 100%;
+	height: 100%;
+}
+#followingDR {
+	overflow: hidden;
+}
+#followingDR .feedIR_user {
+	opacity: 0.6;
+}
+#followingDR .feedIR_user[data-selected=true] {
+	opacity: 1;
+}
+#followingDR .core_Carousel_item.collapsed {
+	height: 0;
+	padding: 0;
+	opacity: 0;
+	margin: 0;
+}
+#followingDR_innerContainer {
+	overflow: hidden;
+	width: 95px;
+}
+#moreFollows {
+	cursor: pointer;
+}
+#followingDR .feedIR_user {
+	padding-top: 0;
+}
+#followingDR .core_Carousel_item {
+	width: 73px;
+	height: 73px;
+	padding: 0px;
+	margin: 0;
+	margin-bottom: 5px;
+	overflow: hidden;
+	-webkit-transition: height 0.4s, padding 0.4s;
+}
+#followingDR {
+	height: 780px !important;
+	margin-top: 5px;
+}
+#currentFollowedUserThumb {
+	position: relative;
+	top: 5px;
+	left: 1px;
+}
+.SocialContainer a {
+	text-decoration: none;
+}
+.userIR_previews {
+	overflow: hidden;
+}
+#noMoreItems, #feedError {
+	display: none;
+	font-family: BebasNeueRegular, sans-serif;
+	text-align: center;
+	font-size: 24px;
+	color: #ccc;
+	margin-left: 100px;
+	clear: both;
+}
+#noMoreItems.show, #feedError.show {
+	display: block;
+}
+#noMoreItems.hide, #feedError.hide {
+	display: none;
+}
+
+#feedContainer {
+	width: 600px;
+}
+.debug {
+	max-width: 600px;
+}
+.flood {
+	font-family: 'Flood', sans-serif;
+    font-size:45px;
+	color: black;
+}
+.reallyHide {
+	display: none !important;
+}
+#socialFeedModule .feedIR_userFollowButton {
+	max-width: 72px;
+	overflow: hidden;
+	padding-left: 0;
+	padding-right: 0;
+}
+#followModule {
+	overflow: hidden;
+}
+.userIR2_previewImage {
+	width: 72px;
+	height: 72px;	
+	margin-right: 8px;
+	position: relative;	
+}
+.userIR2_previewImage img {
+	position: absolute; 
+	bottom: 0; 
+	max-width: 72px; 
+	max-height: 72px; 
+	box-shadow: 0 0 3px 0px #888;
+}
+.userIR_name {	
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+#followModule .userIR_name
+{
+	width: 130px;
+}
+#profileContainer .userIR_name
+{
+	width: 155px;
+	
+}
+#followprofileIR .userIR_name
+{
+	width: 115px;
+}
+.userIR_nameLink {
+	color: black;
+}
+.userIR2 {
+	position: relative;
+	left: 0;
+	background: white;
+	animation: slideIn 0.25s ease-out 0s 1;
+	-webkit-animation: slideIn 0.25s ease-out 0 1;
+}
+@keyframes slideIn {
+	0% { left: 200px; }
+	100%{ left: 0; }
+}
+@-webkit-keyframes slideIn {
+	0% { left: 200px; }
+	100%{ left: 0; }
+}
+.scaleOut {
+	animation: scaleOut 0.25s ease-out 0s 1 normal forwards;
+	-webkit-animation: scaleOut 0.25s ease-out 0 1 normal forwards;
+}
+@keyframes scaleOut {
+	0% { top: 0; opacity: 1;}
+	50% { top: 75px; opacity: 0.5;}
+	100% { top: 100px; opacity: 0;}
+}
+@-webkit-keyframes scaleOut {
+	0% { top: 0; opacity: 1;}
+	50% { top: 75px; opacity: 0.5;}
+	100% { top: 100px; opacity: 0;}
+}
+
+.userIR_previews {
+	white-space: nowrap;
+	/*width: 180px;*/
+}
+.userIR_nameLink {
+	font-weight: normal;
+	text-decoration: none;
+}
+.userIR_followersIcon {	
+	display: inline-block;
+	background: url('http://cache1.artprintimages.com/images/community/community_sprite.png') no-repeat -14px -33px;
+	width: 19px;
+	height: 11px;
+}
+a:hover .userIR_followersIcon {
+	/*background-position: -38px -33px;*/
+}
+.userIR_heartIcon {	
+	display: inline-block;
+	background: url('http://cache1.artprintimages.com/images/community/community_sprite.png') no-repeat -15px -108px;
+	width: 15px;
+	height: 14px;
+}
+a:hover .userIR_heartIcon {
+	/*background-position: -39px -108px;*/
+}
+.userIR_closeButton {
+	background: url('http://cache1.artprintimages.com/images/community/community_sprite.png') no-repeat -14px -128px;
+	width: 17px;
+	height: 17px;
+}
+.userIR_stats span {
+	vertical-align: middle;
+	font-size: 12px;
+	line-height: 18px;
+	color: #a5a5a5;
+}
+.userIR_stats a:hover span {
+	color: #ef9223;
+}
+.userIR_spacer {
+	padding: 0 2px;
+}
+.userIR2 .follow_userIR_userFollowButton {
+	width: 73px;
+	margin-top: 5px !important;
+}
+.headerText {
+	border-top: 1px solid #000;
+	padding: 1px 0 4px 0;
+}
+/*.userIR2 {
+	-webkit-animation: changeSize 0.8s ease-out 0 1;
+}
+@-webkit-keyframes changeSize {
+	0% {-webkit-transform: scale(0.1); opacity: 0;}
+	100% {-webkit-transform: scale(1.0); opacity: 1;}
+}*/
+#followStatus {
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: #888;
+	font-family: BebasNeueRegular;
+	font-size: 25px;
+}
+
+
+.userIR_placeHolder {
+	height: 161px;
+	line-height: 181px;
+	text-align: center;
+	display: block;
+}
+.userIR_placeHolder .loadingIndicator {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.userIR2_separator {
+	position: relative;
+	margin-top: 18px;
+	padding-top: 18px;
+	border-top: 1px solid #CCC;
+	background: white;
+}
+.SocialContainer
+{
+	margin-bottom:15px;
+	float:left;	
+    font-size: 11px;
+    width:1008px;
+    z-index:1001;      
+}
+.SocialTitle
+{
+    color: #000000;
+    font-family: 'BebasNeueRegular';
+    font-size: 60px;
+    margin:0px;
+    font-weight: normal;
+}
+.SocialLeft
+{
+    float:left;
+    width:668px;
+}
+.SocialRight
+{
+    float:right;
+    width:243px;
+}
+#RecentlyViewedModule
+{
+    display:none;
+}
+.filterBarContainer
+{
+    background-color: #F2F2F2;
+    height: 35px;
+    width: 100%;
+    margin-top:20px;
+}
+#SocialLeft .core_TabBar
+{
+    padding-right:0px;
+}
+#SocialLeft .core_Tab
+{
+    padding:4px 2px 1px;
+    background-color:#F2F2F2;
+    margin:7px 0 -1px 12px;
+    min-width:152px;
+    font-size:22px;
+}
+#SocialLeft .core_Tab:hover
+{
+	color:#FFF;
+	background-color:#000;
+	border:1px solid #000;
+}
+.filterOption
+{
+    float:left;
+    line-height:35px;
+}
+.filterOptionNudity
+{
+    float:right;
+    line-height:35px;
+}
+.filterOptionLabel
+{
+    font-family:Verdana;
+    font-size:11px;
+    margin-left: 2px;
+    margin-right: 7px;
+}
+.filterOptionLabelHappeningArtCom, .filterOptionLabelYourFeed 
+{
+    margin-right:7px;
+    margin-left:7px;
+}
+.filterOptionChkBox
+{
+    float:left;
+    margin-top:11px;
+    cursor:pointer;
+}
+#SocialLeft .core_Tab[selected="true"] {
+    background: none repeat scroll 0 0 white;
+    border:1px solid #C6C6C6;
+    border-bottom: 1px solid #FFF;
+    color: #000;
+}
+
+.YourFeedLoginScreenContainer
+{
+    background-color: #F2F2F2;
+    border:1px solid #DDDDDD;
+    float: left;
+    text-align: center;
+    width: 666px;
+    margin:40px 0px;
+    color: #000000;
+}
+.screenContent1
+{
+    color: #000000;
+    font-family: 'BebasNeueRegular';
+    font-size: 24px;
+    text-align: center;
+    margin-top:40px;
+}
+.connectFBBtnContainer
+{
+    /*background-color: #F2F2F2;
+    border: 1px solid #F2F2F2;
+    margin: 9px auto 0px;*/
+    cursor: pointer;    
+    text-align: center;
+    width: 230px;
+    margin: 9px auto 0px;
+    padding-left:18px;
+}
+.registerEmailContainer
+{
+    cursor: pointer;    
+    text-align: center;
+    width: 100%;
+    margin:0px auto;
+}
+#connectFBBtnLoginFollowing_facepile, #connectFBBtnLoginFriends_facepile
+{
+	margin-left: 18px !important;
+}
+.registerEmailContainer #registerWithEmailBtn
+{
+	height:28px;
+	padding:1px 24px;
+}
+.screenContent2, .screenContent3, .screenContent4
+{
+    font-size: 15px;
+    line-height:20px;
+    text-align:center;
+}
+.alreadyLoginLink
+{
+    color: #888;
+    cursor: pointer;
+    margin-left: 5px;
+    text-decoration: underline;
+}
+.alreadyLoginLink:hover
+{
+	color:#ef9223;
+}
+.registerEmailLabel, .FBBtnLabel
+{
+    width:170px;
+}
+.screenContent2
+{
+	margin-top:9px;
+}
+
+.screenContent3
+{
+    margin-bottom:12px;
+}
+.screenContent4
+{
+    margin-bottom: 12px;
+    margin-top: 9px;
+}
+/*.connectFBBtnLogin
+{
+    margin-left: -14px;
+    margin-top: 12px;
+}*/
+.core_form_checkbox {
+	display: inline;
+}
+.feedFilterContainer {
+	background: #CCC;
+	margin: 5px;
+	padding: 5px;
+}
+.feedIR
+{
+	margin-top: 28px;
+	/*float:left;*/
+	/*border-bottom:1px solid #c0c0c0;*/
+}
+.feedIR_user {
+	display: inline-block;
+	vertical-align: top;
+    margin-right: 12px;
+	/*float:left;*/
+}
+.feedIR_user[data-selected=true] .feedIR_userThumb {
+    outline: 4px solid #ef9223;
+}
+#followingDR .feedIR_user {
+    position: relative;
+    display: block;
+    /*padding-top: 5px;*/
+}
+.feedIR_userIndicator {
+    background: url('http://cache1.artprintimages.com/images/community/selectedFollowerArrow_orange_retina.png') no-repeat;
+    background-size: 8px 17px;
+    width: 8px;
+    height: 17px;
+    background-size: contain;
+    position: absolute;
+    left: 76px;
+    top: 50%;
+    margin-top: -8px;
+    display: none;
+}
+.feedIR_user[data-selected=true] .feedIR_userIndicator {
+    display: block;
+}
+#followingDR .feedIR_user 
+{
+}
+.feedIR_userThumb 
+{
+    cursor:pointer;
+	display: block;
+	width: 72px;
+	height: 72px;
+	margin-bottom:5px;
+}
+.feedIR_galleryItem {
+	display: inline-block;
+	vertical-align: top;
+	/*float:left;*/
+	/*width: 600px;*/
+	/*margin-bottom:28px;*/
+}
+.feedIR_galleryItem_heroImageContainer {
+	width: 583px;
+	max-height: 583px;
+	cursor:pointer;
+	margin-bottom:10px;
+	text-align:center;
+}
+.feedIR_galleryItem_heroImage {
+	max-width: 583px;
+	max-height: 583px;
+}
+
+.feedIR_galleryItem_saveToGalleryButton, .feedIR_galleryItem_shareButton {
+	float: right;
+}
+.feedIR_galleryItem_shareButton
+{
+	margin-right:10px !important;
+}
+.feedIR_follow {
+	display: inline-block;
+	vertical-align: top;
+	white-space: normal;
+	/*max-width: 583px;*/
+}
+.userIR {
+	margin: 20px 20px 20px 10px;
+    white-space: nowrap;
+}
+.userIR_left {
+	display: inline-block;
+	height: 72px;
+	width: 250px;
+}
+.userIR_thumb {
+	width: 73px;
+	height: 73px;
+}
+.userIR_info {
+	display: inline-block;
+	vertical-align: top;
+	margin-left:9px;
+}
+.userIR_info .userIR_name a, .spaceIR_name a {
+	color: #000;
+}
+.userIR_info .userIR_name a:hover, .spaceIR_name a:hover {
+	color: #EF9223;
+}                             
+.userIR_stats {
+	color: #888;
+	margin: 4px 0;
+}
+.userIR_previewImage {
+	width: 72px;
+	height: 72px;	
+	margin-right: 12px;
+}
+.userIR_previews {
+	margin-top: 12px;
+	width:238px;
+	padding:2px;
+}
+.userIR2 .userIR_previewImage {
+	/*margin: 5px;*/
+	margin-right: 12px;
+	background-size: contain;
+	/*border: 1px solid #888;*/
+}
+.userIR_right {
+	display: inline-block;
+	height: 72px;
+	max-width: 340px;
+}
+.inlineBlock {
+	display: inline-block;
+	vertical-align: top;
+}
+.userIR2 {
+	/*margin-bottom: 18px;
+	padding-bottom: 18px;
+	border-bottom: 1px solid #CCC;*/
+	position: relative;
+}
+.userIR_closeButton {
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+}
+.userIR2_left {
+	margin-right: 10px;
+}
+.feedIR_galleryItem_tagLine, .feedIR_followHeader
+{
+	line-height:16px;
+}
+.feedIR_galleryItem_tagLine, .feedIR_galleryItem_name, .feedIR_galleryItem_accountName, .feedIR_galleryItem_By
+{
+	font-family: Times New Roman;
+    font-size: 15px;
+    margin-bottom: 5px;	
+    color:#000000;
+    
+}
+.feedIR_galleryItem_By
+{
+	margin-right:5px;
+}
+.feedIR_galleryItem_tagLine a, .feedIR_followHeader, .feedIR_followHeader a, .feedIR_galleryItem_title, .userIR_name, .feedIR_galleryItem_Comment
+{
+	font-family: Times New Roman;
+    font-size: 15px;
+    margin-bottom: 5px;	
+    color:#888888;
+}
+.feedIR_galleryItem_tagLine a:hover, .feedIR_followHeader a:hover, .feedIR_galleryItem_name:hover, .feedIR_galleryItem_accountName:hover
+{
+    text-decoration: underline;
+    color:#ef9223;
+}
+.feedIR_galleryItem_tagLine a, .feedIR_galleryItem_name, .feedIR_followHeader a
+{
+	text-decoration: underline;
+}
+.feedIR_followHeader/*, .feedIR_galleryItem*/
+{
+	/*margin-left:10px;*/
+}
+.feedIR_galleryItem_title
+{
+	cursor: pointer;
+    float: left;
+    line-height: 18px;
+    color:#000;
+    font-weight:normal;
+    width:300px;
+    white-space:normal;
+}
+.userIR_userFollowButton
+{
+	margin-top:15px !important;
+}
+.userIR_stats_followers, .userIR_stats_pipe, .userIR_stats_hearts
+{
+	float:left;
+	font-family: verdana;
+    font-size: 12px;
+}
+.userIR_stats_heartsCount
+{
+    background: url("http://cache1.artprintimages.com/images/pub/gallerypage/Gallery_ImageSprite_orange_v1.png") no-repeat scroll -132px -311px transparent;
+    float: left;
+    font-size: 11px;
+    height: 16px;
+    line-height: 17px;
+    margin-left: 2px;
+    padding: 0 0 0 1px;
+    text-align: center;
+    width: 27px;
+}
+.userIR_stats_hearts
+ {
+    background: url("http://cache1.artprintimages.com/images/pub/gallerypage/Gallery_ImageSprite_orange_v1.png") no-repeat scroll -115px -313px transparent;
+    cursor: pointer;
+    float: left;
+    height: 14px;
+    margin-top: 2px;
+    width: 15px;
+}
+.feedIR_galleryItem_Comment
+{
+	margin-top:10px;
+	margin-bottom:10px;
+	width:585px;
+	color: #000;
+	white-space: normal;
+}
+
+
+#followModule h1, #followModule h2, #followModule h3 {
+	font-family: BebasNeueRegular, sans-serif;
+	color: #000;
+}
+
+.feedContent
+{
+    float:left;
+    margin-top: 10px;
+    margin-bottom:50px;
+    width:692px;
+}
+.leftContainer #followingDR
+{
+    float: left;
+    width: 90px;
+}
+.leftContainer
+{
+    width: 90px;
+}
+.feedFollowingWidth
+{
+    width:602px;
+}
+#followingDR .feedIR_user
+{
+}
+.followingPlusCount
+{
+    background-color: #F2F2F2;
+    border:1px solid #DDD;
+    float: left;
+    font-family: Times New Roman;
+    font-size: 10px;
+    height: 70px;
+    width: 70px;
+    text-align: center;    
+    text-transform: uppercase;
+}
+#followingPlusCount {
+    display: none !important;
+}
+#moreFollows
+{
+	margin-top:8px;
+	color:#000;
+}
+.followingRightContainer
+{
+    /*background-color: #EEEEEE;*/
+    /*border-top: 2px solid #BBBBBB;*/
+    /*height: 72px;*/
+    /*width: 600px;*/
+    margin-top:5px;
+}
+.followingUserName
+{
+    font-family: 'BebasNeueRegular';
+    font-size: 18px;
+}
+.followingUserButton, .followingUserName
+{
+    float: left;
+    line-height: 30px;
+    margin: 10px;
+}
+.saveToGallery_feed
+{
+    float: right;
+    font-size: 14px;
+    text-transform: uppercase;
+    width: 130px !important;
+    margin:4px auto 0px !important;
+    white-space: normal;
+}
+
+/*contains styles which need to be populated with module args*/
+.lineBreak{
+	border-top:2px solid #F2F2F2;
+}
+.headerText{
+	color: #000000;
+    font-family: 'BebasNeueRegular';
+    font-size: 24px;
+    margin-top: 7px;
+    text-transform:uppercase;
+}
+.innerDiv{
+ 	background-color:#F2F2F2;
+ 	padding: 18px;
+    text-align: center;    
+    margin-bottom:36px;
+    border: 1px solid #DDD;
+ }
+ .innerDivTxt{
+ 	font-family: Times New Roman;
+ 	font-size: 14px;
+ 	color: #000;
+ 	text-align:left;
+ 	padding-bottom:14px;
+ }
+ #createProfile {
+ 	width: 198px;
+ }
+ 
+ .containerDivNotLoggedIn , .containerDivLoggedIn{
+ 	display:block;
+ 	
+ }
+  
+ .share
+ {
+     margin: 4px 0;
+ }
+.shareTxt
+{
+    font-family: 'BebasNeueRegular',sans-serif;
+    font-size:15px;
+    color:#000;
+}
+
+#iconShareModule
+{
+     display: inline-block;
+     float:left
+}
+
+.userIR_stats
+{
+    overflow:hidden;
+}
+  
+.userIR_stats_pipe
+{
+    padding: 0 3px;
+}
+div.gig-simpleShareUI
+{
+    border:none !important;
+    -moz-box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.2);
+}
+div.gig-simpleShareUI-inner
+{
+    border:none !important;
+}
+div.gig-simpleShareUI-caption
+{
+    height:35px !important;
+    padding-left:10px !important;
+}
+div.gig-simpleShareUI-caption-text
+{
+    color: #000000 !important;
+    font-family: 'BebasNeueRegular';
+    font-size: 24px;
+    text-transform:uppercase;
+    line-height:36px !important;
+    font-weight : normal !important;
+}
+div.gig-simpleShareUI-closeButton
+{
+    background: url("http://cache1.artprintimages.com/images/mygallery/mygalleries_sprite_branding.png") no-repeat scroll -354px -194px transparent !important;
+    height: 13px !important;
+    width: 13px !important;
+    margin:11px 10px 0px 0px !important;
+}
+.feedIR_userGallery
+{
+    margin-left:0px;
+}
+.feedIR_ShareButton
+{
+   float:right;
+   margin-right:15px;
+}
+.feed_linkscontainer
+{
+	float:left;
+	width:583px;
+}
+.feedlinks_left
+{
+    float:left;
+}
+.feedlinks_right
+{
+    float:right;
+    height:35px;
+}
+.feedIR_galleryItem_name, .feedIR_galleryItem_accountName
+{
+	cursor:pointer;
+}
+.feedIR_ShareButtonContainer
+{
+	float:left;
+	padding-right:10px;
+}
+.feedIR_ShareButtonContainerGalleryComment, .feedIR_ShareButtonContainerRoomSave
+{
+	float:right;
+}
+.arrowMessageContainer
+{
+	float:left;
+    font-family: 'flood';
+    font-size:45px;
+    color:#000;
+   	width:100%;
+}
+#followingIcon, #friendsIcon, #featuredIcon, #everyoneIcon {
+    width: 20px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 3px;
+    background: url('http://cache1.artprintimages.com/images/community/community_sprite.png') no-repeat;
+}
+#followingIcon {
+    background-position: -37px -13px;
+}
+[selected=false] #followingIcon {
+    background-position: -13px -13px;
+}
+#friendsIcon {
+    background-position: -37px -48px;
+}
+[selected=false] #friendsIcon {
+    background-position: -13px -48px;
+}
+#featuredIcon {
+    background-position: -37px -68px;
+}
+[selected=false] #featuredIcon {
+    background-position: -13px -68px;
+}
+#everyoneIcon {
+    background-position: -37px -87px;
+}
+[selected=false] #everyoneIcon {
+    background-position: -13px -87px;
+}
+.messageArrowLeft
+{
+	 background: url('http://cache1.artprintimages.com/images/community/community_sprite.png') no-repeat -69px -16px; 
+	 width: 146px; 
+	 height: 39px;
+}
+.messageArrowRight
+{
+	 background: url('http://cache1.artprintimages.com/images/community/community_sprite.png') no-repeat -68px -65px; 
+	 width: 146px; 
+	 height: 39px;
+}
+.inviteFriendsDiv
+{
+	background: url('http://cache1.artprintimages.com/images/community/community_sprite.png') no-repeat -79px -121px; width: 201px; height: 28px ;
+	cursor:pointer;
+}
+.featuredUserStar
+{
+	background: url('http://cache1.artprintimages.com/images/community/community_sprite.png') no-repeat -14px -174px; 
+	width: 16px; 
+	height: 16px;
+	position:relative;
+	top:-73px;
+}
+.followingUserContainer {
+    display: table;
+    border-collapse: collapse;
+    width: 577px;
+}
+.cfu_td {
+    display: table-cell;
+    vertical-align: middle;
+    height: 70px;
+    padding: 0 18px;
+    background: #f2f2f2;
+    border: 1px solid #ddd;
+    width: 60px;
+}
+#cfu_cell1 {
+    width: auto;
+}
+.cfu_activityFrom {
+    font-size: 15px;
+}
+.cfu_name {
+    font-size: 36px;
+    color: #000;
+    font-family: BebasNeueRegular;
+    width: 270px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.cfu_line1 {
+    font-size: 30px;
+    font-family: BebasNeueRegular;
+    text-align: center;
+}
+.cfu_line2 {
+    font-size: 10px;
+    font-family: Times New Roman;
+    color: #000;
+    text-transform: uppercase;
+    text-align: center;
+}
+#cfu_cell4 {
+    width: 40px;
+}
+#feedMessage {
+    background: #f2f2f2;
+    padding: 5px;
+    color: #3bb049;
+    margin: 10px 0;
+    text-align: center;
+    font-size: 15px;
+    width: 658px;
+}
+#inviteFriendsDiv
+{
+	font-size: 20px;
+    color: #fff;
+    font-family: BebasNeueRegular;
+    width:201px;
+    height:28px;
+    line-height:31px;
+    text-align:center;
+}
+.inviteButton
+{
+	width:201px;
+	padding:20px;
+	background-color:#F2F2F2;
+	border:1px solid #DDD;
+	margin-bottom:36px;
+}
+#moreFollows_number {
+	font-family: 'BebasNeueRegular';
+    font-size: 30px;
+    color:#888;
+}
+.userProfile
+{
+	white-space:nowrap;
+}
+#feedStatus {
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: #888;
+	font-family: BebasNeueRegular;
+	font-size: 25px;
+	-webkit-animation: pulse 0.5s linear 0 infinite alternate;
+}
+@-webkit-keyframes pulse {
+	0% { -webkit-transform: scale(0.9); color: #888; }
+	100%{ -webkit-transform: scale(1.1); color: #444; }
+}
+
+.feedIR_userThumb, .userIR_thumb {
+    background-size: cover !important;
+    background-position: center !important;
+    width: 73px;
+    height: 73px;
+}
+.userIR_thumb {
+    display: inline-block;
+}
+
+#feedMoreButton {
+    width: 668px;
+    display: none;
+    margin-bottom: 12px;
+}
+
+/*#feedDR {
+	-webkit-animation: changeSize 0.8s ease-out 0 1;
+}
+@-webkit-keyframes changeSize {
+	0% {-webkit-transform: scale(0.1); opacity: 0;}
+	100% {-webkit-transform: scale(1.0); opacity: 1;}
+}
+.scaleOut {
+	-webkit-animation: scaleOut 0.8s ease-out 0 1 normal forwards;
+}
+@-webkit-keyframes scaleOut {
+	0% {-webkit-transform: scale(1.0); opacity: 1;}
+	100% {-webkit-transform: scale(0.0); opacity: 0;}
+}
+
+#noFeed
+{
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: #888;
+	font-family: BebasNeueRegular;
+	font-size: 55px;
+}*/
+.findpeopleto
+{
+	margin-top:50px;
+}
+.arrowMessageContainer
+{
+	width:579px;
+	margin-left:102px;
+}
+
+.loadingIndicator {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: url('http://cache1.artprintimages.com/images/community/spinning-wheel.gif');
+    margin: 18px auto;
+}
+
+#SocialLeft .core_Tab {
+    min-width: 152px;
+    margin-right: 12px;
+    margin-left: 0px;
+}
+#tn1_tabBar {
+    white-space: nowrap;
+}
+.feedIR {
+    white-space: nowrap;
+}
+.featuredUser
+{
+	color:#ef9223;
+	font-family: BebasNeueRegular;
+	font-size: 24px;
+	float:left;
+	padding-right:5px;
+}
+.userIR_closeButton:hover, .spaceIR_closeButton:hover
+{
+	background: url("http://cache1.artprintimages.com/images/community/community_sprite.png") no-repeat -38px -128px;
+}
+
+.debug
+{
+	color:#fff;
+}
+#moreSpacesButton, #followMoreButton {
+	width: 231px;
+	background-image: url("http://cache1.artprintimages.com/images/mygallery/mygalleries_sprite_branding2.png");
+    background-position: -481px -63px;
+    font-size: 18px
+}
+#moreSpacesButton:hover, #followMoreButton:hover {
+	background-image: url("http://cache1.artprintimages.com/images/mygallery/mygalleries_sprite_branding2.png");
+    background-position: -481px -111px;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+#logIn
+{
+	margin-right:10px;
+}
+ #logIn , #signUp
+ {
+    max-width: 100%;
+	overflow: hidden;
+ }
+
+ .SocialContainer[loggedIn=true] #containerDivNotLoggedIn {
+    display: none;
+ }
+ .SocialContainer[loggedIn=false] #containerDivNotLoggedIn {
+    display: block;
+ }
+
+ #profileLoadingIndicator {
+    display: none;
+    width: 242px;
+    height: 180px;
+    line-height: 180px;
+    text-align: center;
+ }
+ #profileLoadingIndicator.show {
+    display: block;
+ }
+.spaceIR {
+	position: relative;
+	left: 0;
+	background: white;
+	
+    white-space: nowrap;
+	animation: slideIn 0.25s ease-out 0s 1;
+	-webkit-animation: slideIn 0.25s ease-out 0 1;
+/*
+	animation-name: slideIn;
+	animation-duration: 0.25s;
+	animation-timing-function: ease-out;
+	animation-delay: ;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-play-state: running;*/
+}
+@keyframes slideIn {
+	0% { left: 200px; }
+	100%{ left: 0; }
+}
+@-webkit-keyframes slideIn {
+	0% { left: 200px; }
+	100%{ left: 0; }
+}
+
+.slideDown {
+	animation: slideDown 0.25s ease-out 0s 1 normal forwards;
+	-webkit-animation: slideDown 0.25s ease-out 0 1 normal forwards;
+}
+@keyframes slideDown {
+	0% { top: 0; opacity: 1;}
+	50% { top: 75px; opacity: 0.5;}
+	100% { top: 100px; opacity: 0;}
+}
+@-webkit-keyframes slideDown {
+	0% { top: 0; opacity: 1;}
+	50% { top: 75px; opacity: 0.5;}
+	100% { top: 100px; opacity: 0;}
+}
+
+.spaceIR_left {
+	display: inline-block;
+	height: 72px;
+	
+}
+.spaceIR_thumb {
+	width: 72px;
+	height: 72px;
+}
+.spaceIR_info {
+	display: inline-block;
+	vertical-align: top;
+	margin-left:10px;
+}
+.spaceIR_name {
+	font-weight: bold;
+	text-overflow: ellipsis;
+	width: 130px;
+	overflow: hidden;
+}
+.spaceIR_stats {
+	color: #888;
+	margin: 4px 0;
+}
+.spaceIR_stats a:hover span {
+	color: #ef9223;
+}
+.spaceIR_previewImage {
+	width: 72px;
+	height: 72px;	
+	margin-right: 10px;
+}
+.spaceIR_previews {
+	margin-top: 10px;
+}
+.spaceIR .spaceIR_previewImage {
+	/*margin: 5px;*/
+	margin-right: 10px;
+	background-size: contain;
+	border: 1px solid #888;
+}
+.spaceIR_right {
+	display: inline-block;
+	height: 72px;
+	max-width: 340px;
+}
+.inlineBlock {
+	display: inline-block;
+	vertical-align: top;
+}
+.spaceIR {
+	/*margin-bottom: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #CCC;
+	position: relative;*/
+}
+.spaceIR_closeButton {
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+}
+.spaceIR_left {
+	margin-right: 10px;
+}
+.spaceIR_userFollowButton
+{
+	margin-top:15px !important;
+}
+.spaceIR_stats_followers, .spaceIR_stats_pipe, .spaceIR_stats_hearts
+{
+	float:left;
+	font-family: verdana;
+    font-size: 12px;
+}
+.spaceIR_stats_heartsCount
+{
+    background: url("http://cache1.artprintimages.com/images/pub/gallerypage/Gallery_ImageSprite_orange_v1.png") no-repeat scroll -132px -311px transparent;
+    float: left;
+    font-size: 11px;
+    height: 16px;
+    line-height: 17px;
+    margin-left: 2px;
+    padding: 0 0 0 1px;
+    text-align: center;
+    width: 27px;
+}
+.spaceIR_stats_hearts
+ {
+    background: url("http://cache1.artprintimages.com/images/pub/gallerypage/Gallery_ImageSprite_orange_v1.png") no-repeat scroll -115px -313px transparent;
+    cursor: pointer;
+    float: left;
+    height: 14px;
+    margin-top: 2px;
+    width: 15px;
+}
+
+#spacesModule h1, #spacesModule h2, #spacesModule h3 {
+	font-family: BebasNeueRegular, sans-serif;
+	color: black;
+}
+
+#spacesModule {
+	margin-top: 36px;
+}
+#spacesModule .core_Button.secondary:hover {
+    background: none repeat scroll 0 0 black;
+    border: 1px solid black;
+    box-shadow: none;
+    color: white !important;
+    margin: 0;
+}
+
+#spacesModule .core_Button.secondary[selected="true"] {
+    background: -moz-linear-gradient(center top , #FFFFFF 0%, #DCDCDC 100%) repeat scroll 0 0 transparent;
+    border: 1px solid #DBDBDB;
+    box-shadow: none;
+    color: black !important;
+    margin: 0;
+}
+
+
+
+.spaceIR_thumb {
+	/*background: url('$imgRoot$unknownUser.png');*/
+}
+.spaceIR_previews {
+	white-space: nowrap;
+	/*width: 180px;*/
+}
+.spaceIR_nameLink {
+	font-weight: normal;
+	text-decoration: none;
+	font-size: 15px;
+}
+.spaceIR_followersIcon {	
+	display: inline-block;
+	background: url('http://cache1.artprintimages.com/images/community/community_sprite.png') no-repeat -14px -33px;
+	width: 19px;
+	height: 11px;
+}
+a:hover .spaceIR_followersIcon {
+	/*background-position: -38px -33px;*/
+}
+.spaceIR_heartIcon {	
+	display: inline-block;
+	background: url('http://cache1.artprintimages.com/images/community/community_sprite.png') no-repeat -15px -108px;
+	width: 15px;
+	height: 14px;
+}
+a:hover .spaceIR_heartIcon {
+	/*background-position: -39px -108px;*/
+}
+.spaceIR_closeButton {
+	background: url('http://cache1.artprintimages.com/images/community/community_sprite.png') no-repeat -14px -128px;
+	width: 17px;
+	height: 17px;
+}
+.spaceIR_stats span {
+	vertical-align: middle;
+	font-size: 12px;
+	line-height: 18px;
+	color: #a5a5a5;
+}
+.spaceIR_spacer {
+	padding: 0 2px;
+}
+.spaceIR_userFollowButton {
+	width: 73px;
+	margin-top: 5px !important;
+}
+
+.SocialContainer[zone=4] #spacesModule{
+	display: none;
+}
+#spacesModule[hiddenByZone=true] {
+	display: none;
+}
+#socialFeedModule[state=following] #followingDR {
+	display: block;
+}
+#socialFeedModule[state=following] .leftContainer {
+	display: block;
+}
+#socialFeedModule[state=following] .followingRightContainer {
+	display: block;
+}
+#socialFeedModule[state=following] .YourFeedLoginScreenContainerFollowing {
+	display: block;
+}
+#socialFeedModule[state=following] #feedDR .feedIR_user {
+	display: none;
+}
+#socialFeedModule[state=following] .feedIR_followHeader {
+	margin-left: 0;
+}
+
+#socialFeedModule[showFeed=false] #feedDR {
+	display: none !important;
+}
+
+#socialFeedModule[showFeed=false] #infiniteScrollAnchor {
+	display: none !important;
+}
+
+#followingMessageContainer2 {
+	display: none;
+}
+.SocialContainer[loggedin=true] .containerDivLoggedIn, .SocialContainer[loggedin=false] .containerDivNotLoggedIn {
+	display: block;
+}
+.SocialContainer[loggedin=false] .containerDivLoggedIn, .SocialContainer[loggedin=true] .containerDivNotLoggedIn {
+	display: none;
+}
+
+#socialFeedModule[hideCFU=true] #currentFollowedUser {
+	display: none !important;
+	height: 0 !important;
+	overflow: hidden !important;
+}
+#socialFeedModule[hideCFU=true] #currentFollowedUserThumb {
+	display: none !important;
+}
+#socialFeedModule[hideCFU=true] .collapsed {
+	height: 73px;
+	padding: 0px;
+	margin: 0;
+	margin-bottom: 5px;
+	opacity: 1;
+}
+.SocialContainer[profileLoading=true] #profileLoadingIndicator{
+	display: block;
+}
+.SocialContainer[loggedin=true] .containerDivLoggedIn, .SocialContainer[loggedin=false] .containerDivNotLoggedIn {
+	display: block;
+}
+.SocialContainer[loggedin=false] .containerDivLoggedIn, .SocialContainer[loggedin=true] .containerDivNotLoggedIn {
+	display: none;
+}
+
+/*
+#socialFeedModule[state=following] #followingMessageContainer2 {
+	display: block;
+}
+#socialFeedModule[state=following][followUsed=true] .followUsedShow {
+	display: block;
+}
+#socialFeedModule[state=following][followUsed=false] .followUsedShow {
+	display: none !important;
+}
+#socialFeedModule[state=following][followUsed=true] .followUsedHide {
+	display: none;
+}
+*/
+
+#spacesDR_noContent {
+	display: none;
+	font-size: 125%;
+}
